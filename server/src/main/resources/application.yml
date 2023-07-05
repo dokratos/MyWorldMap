@@ -1,0 +1,26 @@
+debug: true
+server:
+  port: 8080
+springdoc:
+  swagger-ui:
+    path: /swagger-ui.html
+spring:
+  datasource:
+
+  jpa:
+    defer-datasource-initialization: true
+    hibernate:
+      ddl-auto: create # none, create ...
+  sql:
+    init:
+      platform: postgresql
+      mode: always
+    output:
+      ansi:
+        enabled: always
+logging:
+  level:
+    org:
+      springframework:
+        boot:
+          autoconfigure: ERROR
