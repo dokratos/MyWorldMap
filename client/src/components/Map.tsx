@@ -2,7 +2,7 @@ import { GoogleMap, useJsApiLoader } from '@react-google-maps/api';
 import { useState, useEffect } from 'react';
 
 // const loader = new Loader({
-//   apiKey: "AIzaSyBjuCY26HswvhBf-odx9mlouC9ITEWC_gI",
+//   apiKey: ,
 //   version: "weekly"
 // });
 
@@ -17,7 +17,7 @@ import { useState, useEffect } from 'react';
 
 export const Map = () => {
   const { isLoaded } = useJsApiLoader({
-    googleMapsApiKey: "AIzaSyBjuCY26HswvhBf-odx9mlouC9ITEWC_gI"
+    googleMapsApiKey: ""
   });
 
   const [map, setMap] = useState(null);
