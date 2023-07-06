@@ -6,6 +6,7 @@ import { useState } from 'react';
 import Location from '../type';
 import axios from 'axios';
 
+
 interface MapProps {
   locations: Location[]
 }
