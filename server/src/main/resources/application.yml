@@ -6,7 +6,10 @@ springdoc:
     path: /swagger-ui.html
 spring:
   datasource:
-
+#    env_file: ./.env-postgres
+    url: jdbc:postgresql://snuffleupagus.db.elephantsql.com:5432/opnfduka
+    username: opnfduka
+    password: aWd-ILVZ-AXKRqxH-KTqpTenrqALgPXB
   jpa:
     defer-datasource-initialization: true
     hibernate:
