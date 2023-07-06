@@ -1,2 +1,4 @@
-package server.myWorldMap.geolocation;public record GeoResponseDto() {
+package server.myWorldMap.geolocation;
+
+public record GeoResponseDto(Double lat, Double lng) {
 }

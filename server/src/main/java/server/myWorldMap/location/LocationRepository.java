@@ -18,4 +18,15 @@ public class LocationRepository {
     public List<Location> listLocations() {
         return Streamable.of(repo.findAll()).toList();
     }
+
+    public Location createLocation(Location newLocation) {
+        if (newLocation != null) {
+            return repo.save(newLocation);
+        }
+        return null;
+    }
+
+    public void deleteLocation(String id) {
+        repo.deleteById(id);
+    }
 }
