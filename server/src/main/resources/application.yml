@@ -1,6 +1,8 @@
 debug: true
 server:
   port: 8080
+source:
+
 springdoc:
   swagger-ui:
     path: /swagger-ui.html
