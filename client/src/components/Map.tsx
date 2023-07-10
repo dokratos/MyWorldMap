@@ -1,16 +1,13 @@
 import { GoogleMap, useJsApiLoader, Marker, InfoWindow } from '@react-google-maps/api';
 import { removeLocation } from '../slices/locationSlice.ts'
-import { useAppDispatch, useAppSelector } from '../slices/hooks.ts'
-// import 'dotenv/config';
+import { useAppDispatch } from '../slices/hooks.ts'
 import { useState } from 'react';
 import Location from '../type';
 import axios from 'axios';
 
-
 interface MapProps {
   locations: Location[]
 }
-
 
 export const Map = ({locations}: MapProps) => {
   const { isLoaded } = useJsApiLoader({
@@ -31,17 +28,11 @@ export const Map = ({locations}: MapProps) => {
   };
 
   const handleRemove = async (id: string) => {
-    const removed = await axios.delete(`http://localhost:8080/api/locations/${id}`);
-    console.log(id, "id")
+    await axios.delete(`http://localhost:8080/api/locations/${id}`);
     setSelected("");
     dispatch(removeLocation(id))
-    // locations = locations.filter(location => {
-    //   location.id !== id
-    //   console.log(location.id, "locantions")
-    // });
-    // console.log(locations);
-    return removed;
   }
+
   return (
     <div>
       <GoogleMap
@@ -53,7 +44,7 @@ export const Map = ({locations}: MapProps) => {
               streetViewControl: false,
               mapTypeControl: true,
               fullscreenControl: true,
-              minZoom: 4,
+              minZoom: 2,
               maxZoom: 15
             }}
           >
@@ -85,4 +76,3 @@ export const Map = ({locations}: MapProps) => {
     </div>
   )
 }
-
