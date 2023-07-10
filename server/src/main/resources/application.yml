@@ -12,7 +12,7 @@ spring:
   datasource:
     url: jdbc:postgresql://snuffleupagus.db.elephantsql.com:5432/opnfduka
     username: opnfduka
-    password: aWd-ILVZ-AXKRqxH-KTqpTenrqALgPXB
+    password:
   jpa:
     defer-datasource-initialization: true
     hibernate:
