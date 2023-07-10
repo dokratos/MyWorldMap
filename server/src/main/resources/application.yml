@@ -2,13 +2,17 @@ debug: true
 server:
   port: 8080
 source:
-
+  url: https://api.geoapify.com/v1/geocode/search?text=
+  key: ${GEO_KEY}
 springdoc:
   swagger-ui:
     path: /swagger-ui.html
 spring:
+#  env_file: ./.env-postgres
   datasource:
-
+    url: jdbc:postgresql://snuffleupagus.db.elephantsql.com:5432/opnfduka
+    username: opnfduka
+    password: aWd-ILVZ-AXKRqxH-KTqpTenrqALgPXB
   jpa:
     defer-datasource-initialization: true
     hibernate:

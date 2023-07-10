@@ -23,4 +23,5 @@ public class Result {
     public void setLon(double lon) {
         this.lon = lon;
     }
+
 }

@@ -15,6 +15,4 @@ public class RootDto {
     }
 
     public List<Result> results;
-
-
 }

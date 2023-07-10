@@ -12,6 +12,6 @@ public class LocationConverter {
                 locationCoordinates.lng(),
                 locationData.year(),
                 locationData.type(),
-                "");
+                "imageUrl");
     }
 }

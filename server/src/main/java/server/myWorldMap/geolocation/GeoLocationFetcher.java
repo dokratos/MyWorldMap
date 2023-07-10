@@ -1,7 +1,7 @@
 package server.myWorldMap.geolocation;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import io.github.cdimascio.dotenv.Dotenv;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
@@ -18,9 +18,13 @@ public class GeoLocationFetcher {
     @Value("${source.url}")
     private String geoApi;
 
+//    Dotenv dotenv = Dotenv.load();
+//dotenv.get()
+//
+//    System.getenv("GEO_KEY");
+
     @Value("${source.key}")
     private String geoKey;
-
 
     HttpClient client = HttpClient.newBuilder().build();
 

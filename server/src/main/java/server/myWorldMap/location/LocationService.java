@@ -5,6 +5,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import server.myWorldMap.geolocation.GeoLocationFetcher;
 import server.myWorldMap.geolocation.GeoResponseDto;
+import server.myWorldMap.image.ImageFetcher;
 
 import java.io.IOException;
 import java.net.URI;
@@ -15,8 +16,11 @@ import java.util.List;
 
 @Service
 public class LocationService {
-@Autowired
-GeoLocationFetcher fetch;
+    @Autowired
+    GeoLocationFetcher fetch;
+
+//    @Autowired
+//    ImageFetcher unsplash;
 
     LocationRepository repo;
 
@@ -30,7 +34,8 @@ GeoLocationFetcher fetch;
 
     public Location postLocation(FrontEndLocationDto newData) throws IOException, InterruptedException {
         GeoResponseDto coordinates = fetch.fetchCoordinates(newData.name(), newData.country());
-        System.out.println(newData.name()+ " PRINTING DATA");
+//        String imageUrl = unsplash.fetchImage(newData.name(), newData.country());
+//        System.out.println(imageUrl + "IMAGEEEEEEEE");
         Location newLocation = LocationConverter.buildLocation(newData, coordinates);
         return repo.createLocation(newLocation);
     }

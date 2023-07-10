@@ -2,6 +2,7 @@ package server.myWorldMap.location;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.validation.constraints.NotNull;
 import org.hibernate.annotations.UuidGenerator;
 
 @Entity
@@ -17,7 +18,7 @@ public class Location {
     private String type;
     private String imgUrl;
 
-    public Location(String name, String country, Double lat, Double lng, String when, String type, String imgUrl) {
+    public Location(@NotNull String name, @NotNull String country, @NotNull Double lat, @NotNull Double lng, String when, String type, String imgUrl) {
         this.name = name;
         this.country = country;
         this.lat = lat;
