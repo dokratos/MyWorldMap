@@ -11,7 +11,7 @@ import java.net.http.HttpResponse;
 import java.nio.charset.StandardCharsets;
 import java.util.concurrent.CompletableFuture;
 
-@Service
+
 public class ImageFetcher {
     @Value("${image-source.url}")
     private String unsplash;

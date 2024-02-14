@@ -37,7 +37,7 @@ export const Map = ({locations}: MapProps) => {
     <div>
       <GoogleMap
             center={center}
-            zoom={4}
+            zoom={11}
             mapContainerStyle={{ width: 'auto', height: '90vh' }}
             options={{
               zoomControl: true,
